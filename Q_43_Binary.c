@@ -1,5 +1,5 @@
 //Humaira
-//Binary search is an efficient algorithm for finding an item from a sorted list of items
+//Binary search is an efficient algorithm for finding an item from a sorted list of items (mid value)
 //program:Binary search of number input by the user in an array 
 #include <stdio.h> //header function file
 int main() //main function
