@@ -1,30 +1,23 @@
-//Humiara Gani
-// Program: To read .csv files.
-#include <stdio.h> //Including standard input output header files.
-#include <stdlib.h>//Including standard library header files.
-#include <string.h>//Including string header files. 
-
-const char* getfield(char* line, int num)
-{
-    const char* tok;
-    for (tok = strtok(line, ";");
-            tok && *tok; // AND condition if both are true the output will be true otherwise faalse
-            tok = strtok(NULL, ";\n")) //strtok is empty 
-    {
-        if (!--num) //conditional 'if' , if true it will return 'tok', otherwise 'NULL'
-            return tok;
-    }
-    return NULL;
-}
-int main() //funtion starts here
-{
-    FILE* stream = fopen("E:\\Cprogrs\\Humaira_124_C_P_Repository.csv\\Read.csv", "r"); // 'fopen' used to open file, Path of the .csv file.
-
-    char line[1024];
-    while (fgets(line, 1024, stream)) //while loop using
-    {
-        char* tmp = strdup(line);
-        printf("Field 3 would be %s\n", getfield(tmp, 3));
-        free(tmp); //delocating 'temp'
-    }
-}
+//Humaira
+//Program to check wether the number is Armstrong or not
+//Armstrong number means sum of individual digit cubes equal to itself e,g the number is 153 and sum of its individual digits cubes is equal to number 153 it self
+#include<stdio.h> // header function
+int main(){ //main function
+	int n, r, c, sum=0, temp; //variable declaration and intialization 
+	printf("Enter n value:"); // printf calling function
+	scanf("%d",&n); // taking input from user
+	temp = n; //assigning value of n to temp variable
+	while(n>0) //while loop, condition
+	{
+		r = n%10; 
+		c = r*r*r; //Armstrong's formulla cube o
+		sum = sum + c;
+		n = n/10;
+	}
+		n = temp;
+	if(n==sum)//true if n equal to equal to sum
+		printf("%d is an Armstrong number\n",temp); //printing number is Armstrong
+	else//false
+		printf("%d is not an Armstrong\n",temp); //number is not Armstrong
+	return 0; //output statement
+} //end 
