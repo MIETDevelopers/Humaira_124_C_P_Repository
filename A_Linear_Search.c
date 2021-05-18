@@ -1,4 +1,4 @@
-// C program to search element in array
+/C program to search element in array
 #include <stdio.h>
 
 #define MAX_SIZE 50 // Maximum array size
